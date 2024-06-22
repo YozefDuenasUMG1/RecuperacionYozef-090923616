@@ -68,4 +68,90 @@ class ExamenFinalVarianteA {
 
         System.out.println("Resultado: " + resultado);
     }
+    public static void gestionarEstudiantes() {
+        List<Estudiante> estudiantes = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Ingrese el nombre del estudiante " + (i+1) + ": ");
+            String nombre = scanner.nextLine();
+            System.out.print("Ingrese la calificación del estudiante " + (i+1) + ": ");
+            double calificacion = scanner.nextDouble();
+            scanner.nextLine(); // Limpiar el buffer
+
+            estudiantes.add(new Estudiante(nombre, calificacion));
+        }
+
+        System.out.println("\nLista de estudiantes:");
+        for (Estudiante estudiante : estudiantes) {
+            System.out.println("Nombre: " + estudiante.getNombre() + ", Calificación: " + estudiante.getCalificacion());
+        }
+    }
+}
+
+class Catedratico {
+    private String nombre;
+    private int edad;
+    private String especialidad;
+    private double salario;
+
+    public Catedratico() {}
+
+    public Catedratico(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public Catedratico(String nombre, int edad, String especialidad, double salario) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.especialidad = especialidad;
+        this.salario = salario;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+}
+
+class Estudiante {
+    private String nombre;
+    private double calificacion;
+
+    public Estudiante(String nombre, double calificacion) {
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+    }
+
+
+
 
